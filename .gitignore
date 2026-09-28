@@ -24,3 +24,4 @@ local.properties
 *.so-*.so
 *.cover
 *.so-1.0.0
+/.idea/deviceManager.xml
