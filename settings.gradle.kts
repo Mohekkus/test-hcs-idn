@@ -24,3 +24,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "test-hcs-idn"
 include(":app")
+include(":domain")
+include(":data")
+include(":presentation")
