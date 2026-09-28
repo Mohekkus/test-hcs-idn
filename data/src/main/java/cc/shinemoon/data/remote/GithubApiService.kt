@@ -11,8 +11,8 @@ interface GithubApiService {
     @GET("search/user")
     suspend fun search(
         @Query("q") query: String,
-        @Query("per_page") pageCount: Int,
-        @Query("page") pageIndex: Int
+        @Query("per_page") pageCount: Int = 30,
+        @Query("page") pageIndex: Int = 1
     ): SearchResponseDto
 
     @GET("users/{username}")

@@ -10,5 +10,5 @@ data class MatchesItem(
 	val indices: List<Int>,
 
 	@Json(name="text")
-	val text: String
+	val text: String = ""
 )

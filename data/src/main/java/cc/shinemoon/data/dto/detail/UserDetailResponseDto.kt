@@ -12,12 +12,6 @@ data class UserDetailResponseDto(
 	@Json(name="repos_url")
 	val reposUrl: String,
 
-	@Json(name="user_view_type")
-	val userViewType: String,
-
-	@Json(name="two_factor_authentication")
-	val twoFactorAuthentication: String,
-
 	@Json(name="following_url")
 	val followingUrl: String,
 
@@ -39,12 +33,6 @@ data class UserDetailResponseDto(
 	@Json(name="blog")
 	val blog: String,
 
-	@Json(name="private_gists")
-	val privateGists: String,
-
-	@Json(name="total_private_repos")
-	val totalPrivateRepos: String,
-
 	@Json(name="subscriptions_url")
 	val subscriptionsUrl: String,
 
@@ -52,31 +40,19 @@ data class UserDetailResponseDto(
 	val updatedAt: String,
 
 	@Json(name="site_admin")
-	val siteAdmin: String,
-
-	@Json(name="disk_usage")
-	val diskUsage: String,
-
-	@Json(name="collaborators")
-	val collaborators: String,
+	val siteAdmin: Boolean,
 
 	@Json(name="company")
 	val company: String,
 
-	@Json(name="owned_private_repos")
-	val ownedPrivateRepos: String,
-
 	@Json(name="id")
-	val id: String,
+	val id: Long,
 
 	@Json(name="public_repos")
-	val publicRepos: String,
+	val publicRepos: Int,
 
 	@Json(name="gravatar_id")
 	val gravatarId: String,
-
-	@Json(name="plan")
-	val plan: Plan,
 
 	@Json(name="email")
 	val email: String,
@@ -88,7 +64,7 @@ data class UserDetailResponseDto(
 	val notificationEmail: String,
 
 	@Json(name="hireable")
-	val hireable: String,
+	val hireable: Boolean,
 
 	@Json(name="starred_url")
 	val starredUrl: String,
@@ -97,7 +73,7 @@ data class UserDetailResponseDto(
 	val followersUrl: String,
 
 	@Json(name="public_gists")
-	val publicGists: String,
+	val publicGists: Int,
 
 	@Json(name="url")
 	val url: String,
@@ -105,11 +81,8 @@ data class UserDetailResponseDto(
 	@Json(name="received_events_url")
 	val receivedEventsUrl: String,
 
-	@Json(name="ldap_dn")
-	val ldapDn: String,
-
 	@Json(name="followers")
-	val followers: String,
+	val followers: Int,
 
 	@Json(name="avatar_url")
 	val avatarUrl: String,
@@ -117,14 +90,11 @@ data class UserDetailResponseDto(
 	@Json(name="events_url")
 	val eventsUrl: String,
 
-	@Json(name="business_plus")
-	val businessPlus: String,
-
 	@Json(name="html_url")
 	val htmlUrl: String,
 
 	@Json(name="following")
-	val following: String,
+	val following: Int,
 
 	@Json(name="name")
 	val name: String,

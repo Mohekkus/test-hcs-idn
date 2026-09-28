@@ -7,7 +7,7 @@ import com.squareup.moshi.Json
 data class SearchResponseDto(
 
     @Json(name = "total_count")
-    val totalCount: Int,
+    val totalCount: Int = 0,
 
     @Json(name = "incomplete_results")
     val incompleteResults: Boolean,

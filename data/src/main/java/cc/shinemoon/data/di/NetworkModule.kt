@@ -2,6 +2,7 @@ package cc.shinemoon.data.di
 
 import android.content.Context
 import cc.shinemoon.data.remote.GithubApiService
+import cc.shinemoon.data.remote.GithubApiServiceWrapper
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.squareup.moshi.Moshi
 import dagger.Module
@@ -57,6 +58,5 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideService(retrofit: Retrofit): GithubApiService =
-        retrofit.create(GithubApiService::class.java)
+    fun provideGithubApiServiceWrapper(apiService: GithubApiService): GithubApiServiceWrapper = GithubApiServiceWrapper(apiService)
 }

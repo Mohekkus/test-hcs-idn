@@ -7,16 +7,16 @@ import com.squareup.moshi.Json
 data class TextMatchesItem(
 
 	@Json(name="fragment")
-	val fragment: String,
+	val fragment: String = "",
 
 	@Json(name="object_url")
-	val objectUrl: String,
+	val objectUrl: String = "",
 
 	@Json(name="object_type")
-	val objectType: String,
+	val objectType: String = "",
 
 	@Json(name="property")
-	val property: String,
+	val property: String = "",
 
 	@Json(name="matches")
 	val matches: List<MatchesItem>
