@@ -2,8 +2,8 @@ package cc.shinemoon.domain.model
 
 data class UserDetailModel(
     val id: Long,
-    val login: String,
-    val avatarUrl: String,
+    val login: String = "",
+    val avatarUrl: String = "",
     val name: String = "",
     val bio: String = "",
     val email: String = "",
@@ -19,5 +19,4 @@ data class UserDetailModel(
     val htmlUrl: String = "",
     val type: String = "",
     val siteAdmin: Boolean,
-    val hireable: Boolean = false
 )

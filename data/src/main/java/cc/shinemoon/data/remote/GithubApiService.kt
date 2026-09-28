@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface GithubApiService {
 
-    @GET("search/user")
+    @GET("search/users")
     suspend fun search(
         @Query("q") query: String,
         @Query("per_page") pageCount: Int = 30,

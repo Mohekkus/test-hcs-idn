@@ -35,6 +35,7 @@ object NetworkModule {
             .addInterceptor(
                 ChuckerInterceptor
                     .Builder(context)
+                    .alwaysReadResponseBody(true)
                     .build()
             )
             .connectTimeout(15, TimeUnit.SECONDS)
@@ -58,5 +59,12 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideGithubApiServiceWrapper(apiService: GithubApiService): GithubApiServiceWrapper = GithubApiServiceWrapper(apiService)
+    fun provideGithubApiService(retrofit: Retrofit): GithubApiService {
+        return retrofit.create(GithubApiService::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGithubApiServiceWrapper(apiService: GithubApiService): GithubApiServiceWrapper =
+        GithubApiServiceWrapper(apiService)
 }

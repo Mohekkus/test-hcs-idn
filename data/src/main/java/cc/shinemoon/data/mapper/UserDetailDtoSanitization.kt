@@ -6,30 +6,30 @@ import cc.shinemoon.domain.model.UserDetailModel
 
 fun UserDetailResponseDto.toModel() = UserDetailModel(
     id = id,
-    login = login,
-    avatarUrl = avatarUrl,
-    htmlUrl = htmlUrl,
+    login = login ?: "",
+    avatarUrl = avatarUrl ?: "",
+    htmlUrl = htmlUrl ?: "",
     publicRepos = publicRepos,
     followers = followers,
     following = following,
-    type = type,
+    type = type ?: "",
     siteAdmin = siteAdmin,
     publicGists = publicGists,
-    bio = bio
+    bio = bio ?: ""
 )
 
 fun UserDetailResponseDto.toEntity() = UserDetailEntity(
     id = id,
-    login = login,
-    avatarUrl = avatarUrl,
-    htmlUrl = htmlUrl,
+    login = login ?: "",
+    avatarUrl = avatarUrl ?: "",
+    htmlUrl = htmlUrl ?: "",
     publicRepos = publicRepos,
     followers = followers,
     following = following,
-    type = type,
+    type = type ?: "",
     siteAdmin = siteAdmin,
     publicGists = publicGists,
-    bio = bio
+    bio = bio ?: ""
 )
 
 fun UserDetailEntity.toModel() = UserDetailModel(

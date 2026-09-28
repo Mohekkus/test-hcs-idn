@@ -63,9 +63,6 @@ data class UserItemDto(
     @Json(name = "organizations_url")
     val organizationsUrl: String = "",
 
-    @Json(name = "hireable")
-    val hireable: Boolean,
-
     @Json(name = "starred_url")
     val starredUrl: String = "",
 
@@ -95,9 +92,6 @@ data class UserItemDto(
 
     @Json(name = "following")
     val following: Int = 0,
-
-    @Json(name = "text_matches")
-    val textMatches: List<TextMatchesItem>,
 
     @Json(name = "name")
     val name: String = "",

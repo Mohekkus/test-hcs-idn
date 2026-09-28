@@ -23,6 +23,5 @@ data class UserDetailEntity(
     val htmlUrl: String = "",
     val type: String = "",
     val siteAdmin: Boolean = false,
-    val hireable: Boolean = false,
     val lastUpdated: Long = System.currentTimeMillis()
 )

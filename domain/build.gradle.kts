@@ -7,4 +7,11 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-dependencies {}
+kotlin {
+    jvmToolchain(17)
+}
+
+dependencies {
+    implementation(libs.kotlin.coroutine.core)
+    implementation("javax.inject:javax.inject:1")
+}

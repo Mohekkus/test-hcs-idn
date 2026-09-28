@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.android.ksp)
     alias(libs.plugins.android.hilt)
+    alias(libs.plugins.androidx.navigation.safeargs)
 }
 
 android {
@@ -20,7 +21,7 @@ android {
     }
 
     buildFeatures {
-         viewBinding = true
+        viewBinding = true
     }
 }
 
@@ -51,8 +52,8 @@ dependencies {
     implementation(libs.kotlin.coroutine.android)
 
     // Navigation Fragments
-     implementation(libs.androidx.navigation.fragment)
-     implementation(libs.androidx.navigation.ui)
+    implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.navigation.ui)
 
     // Unit tests
     testImplementation(libs.junit)

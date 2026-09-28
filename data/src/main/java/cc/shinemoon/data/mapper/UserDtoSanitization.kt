@@ -4,7 +4,7 @@ import cc.shinemoon.data.dto.searches.UserItemDto
 import cc.shinemoon.data.local.entities.UserEntity
 import cc.shinemoon.domain.model.UserModel
 
-fun UserItemDto.toModel(): UserModel =
+fun UserItemDto.toUserModel(): UserModel =
     UserModel(
         id = id,
         login = login,
@@ -14,10 +14,11 @@ fun UserItemDto.toModel(): UserModel =
         followers = followers,
         following = following,
         type = type,
-        siteAdmin = siteAdmin
+        siteAdmin = siteAdmin,
+        bio = bio
     )
 
-fun UserItemDto.toEntity(): UserEntity =
+fun UserItemDto.toUserEntity(): UserEntity =
     UserEntity(
         id = id,
         login = login,
@@ -31,7 +32,7 @@ fun UserItemDto.toEntity(): UserEntity =
         siteAdmin = siteAdmin
     )
 
-fun UserEntity.toModel(): UserModel =
+fun UserEntity.toUserModel(): UserModel =
     UserModel(
         id = id,
         login = login,
@@ -41,14 +42,15 @@ fun UserEntity.toModel(): UserModel =
         followers = followers,
         following = following,
         type = type,
-        siteAdmin = siteAdmin
+        siteAdmin = siteAdmin,
+        bio = bio,
     )
 
-fun List<UserItemDto>.toModel(): List<UserModel> =
-    map { it.toModel() }
+fun List<UserItemDto>.dtoToListUserModel(): List<UserModel> =
+    map { it.toUserModel() }
 
-fun List<UserItemDto>.toEntity(): List<UserEntity> =
-    map { it.toEntity() }
+fun List<UserItemDto>.toListUserEntity(): List<UserEntity> =
+    map { it.toUserEntity() }
 
-fun List<UserEntity>.toModel(): List<UserModel> =
-    map { it.toModel() }
+fun List<UserEntity>.toListUserModel(): List<UserModel> =
+    map { it.toUserModel() }

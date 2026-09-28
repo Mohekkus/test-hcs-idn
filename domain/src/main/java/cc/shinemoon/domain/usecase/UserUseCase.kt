@@ -3,8 +3,9 @@ package cc.shinemoon.domain.usecase
 import cc.shinemoon.domain.model.UserDetailModel
 import cc.shinemoon.domain.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class UserUseCase(
+class UserUseCase @Inject constructor(
     private val repository: UserRepository
 ) {
     fun detail(name: String): Flow<Result<UserDetailModel>> =

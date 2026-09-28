@@ -1,4 +1,4 @@
-package cc.shinemoon.persentation
+package cc.shinemoon.presentation
 
 import org.junit.Test
 

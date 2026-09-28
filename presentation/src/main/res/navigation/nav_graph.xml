@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/searchFragment">
+
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="cc.shinemoon.presentation.search.SearchFragment"
+        android:label="Search">
+        <action
+            android:id="@+id/action_searchFragment_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="cc.shinemoon.presentation.detail.UserDetailFragment"
+        android:label="User Detail">
+        <argument
+            android:name="login"
+            app:argType="string" />
+    </fragment>
+
+</navigation>
