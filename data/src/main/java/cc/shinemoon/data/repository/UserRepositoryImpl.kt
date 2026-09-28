@@ -13,7 +13,6 @@ import cc.shinemoon.domain.model.UserDetailModel
 import cc.shinemoon.domain.model.UserModel
 import cc.shinemoon.domain.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -26,12 +25,13 @@ class UserRepositoryImpl @Inject constructor(
 ): UserRepository {
 
     override fun search(query: String): Flow<Result<List<UserModel>>> = flow {
-        val cachedEntities = userDao.getAllUsers().first()
+        val normalizedQuery = query.trim()
+        val cachedEntities = userDao.searchUsers(normalizedQuery)
         if (cachedEntities.isNotEmpty()) {
             emit(Result.success(cachedEntities.toListUserModel()))
         }
 
-        when (val result = service.search(query)) {
+        when (val result = service.search(normalizedQuery)) {
             is Resources.Success -> {
                 result.data?.items?.let {
                     userDao.insertUsers(it.toListUserEntity())
@@ -46,8 +46,6 @@ class UserRepositoryImpl @Inject constructor(
             is Resources.Error -> {
                 if (cachedEntities.isEmpty()) {
                     emit(Result.failure(Exception(result.message)))
-                } else {
-                    emit(Result.failure(Exception("Showing cached data. ${result.message}")))
                 }
             }
         }
@@ -78,8 +76,6 @@ class UserRepositoryImpl @Inject constructor(
             is Resources.Error -> {
                 if (cachedEntity == null) {
                     emit(Result.failure(Exception(result.message ?: "Network error")))
-                } else {
-                    emit(Result.failure(Exception("Offline mode. ${result.message}")))
                 }
             }
         }

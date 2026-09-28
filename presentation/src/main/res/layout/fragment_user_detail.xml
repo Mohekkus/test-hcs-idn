@@ -144,60 +144,6 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Metadata Info Rows -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:orientation="vertical"
-                app:layout_constraintTop_toBottomOf="@id/cardStats">
-
-                <TextView
-                    android:id="@+id/tvEmail"
-                    style="@style/TextAppearance.Material3.BodyLarge"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="16dp"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    app:drawableStartCompat="@android:drawable/ic_dialog_email"
-                    tools:text="octocat@github.com" />
-
-                <TextView
-                    android:id="@+id/tvLocation"
-                    style="@style/TextAppearance.Material3.BodyLarge"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="16dp"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    app:drawableStartCompat="@android:drawable/ic_menu_mylocation"
-                    tools:text="San Francisco, CA" />
-
-                <TextView
-                    android:id="@+id/tvCompany"
-                    style="@style/TextAppearance.Material3.BodyLarge"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="16dp"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    app:drawableStartCompat="@android:drawable/ic_menu_sort_by_size"
-                    tools:text="@GitHub" />
-
-                <TextView
-                    android:id="@+id/tvBlog"
-                    style="@style/TextAppearance.Material3.BodyLarge"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:drawablePadding="16dp"
-                    android:gravity="center_vertical"
-                    android:paddingVertical="12dp"
-                    android:textColor="?attr/colorPrimary"
-                    app:drawableStartCompat="@android:drawable/ic_menu_share"
-                    tools:text="https://github.blog" />
-            </LinearLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

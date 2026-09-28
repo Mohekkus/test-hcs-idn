@@ -76,19 +76,6 @@ class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
             tvFollowers.text = user.followers.toString()
             tvFollowing.text = user.following.toString()
 
-            // Detailed Info with icon visibility check
-            tvEmail.text = user.email
-            tvEmail.isVisible = user.email.isNotBlank()
-
-            tvLocation.text = user.location
-            tvLocation.isVisible = user.location.isNotBlank()
-
-            tvCompany.text = user.company
-            tvCompany.isVisible = user.company.isNotBlank()
-
-            tvBlog.text = user.blog
-            tvBlog.isVisible = user.blog.isNotBlank()
-
             // Load Avatar using Glide
             Glide.with(this@UserDetailFragment)
                 .load(user.avatarUrl)
